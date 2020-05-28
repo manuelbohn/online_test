@@ -219,7 +219,7 @@ sortButton {
     left: 50%;
     margin-left: -75px;
     width: 150px;
-    z-index: 3
+    z-index: 4
 }
 
 
@@ -229,6 +229,7 @@ sortButton {
     left: 50%;
     margin-left: -175px;
     width: 350px;
+    z-index: 2;
 }
 
 .point_agent_r {
@@ -236,6 +237,7 @@ sortButton {
     bottom: 245px;
     left: 280px;
     width: 350px;
+    z-index: 2;
 }
 
 
@@ -244,6 +246,7 @@ sortButton {
     bottom: 245px;
     left: 360px;
     width: 350px;
+    z-index: 2;
 }
 
 .agent_eat {
@@ -258,7 +261,7 @@ sortButton {
     left: 50%;
     margin-left: -175px;
     width: 350px;
-    z-index: 1
+    z-index: 3
 }
 
 
@@ -288,6 +291,7 @@ sortButton {
     left: 50%;
     margin-left: -150px;
     width: 300px;
+    z-index: 2;
 }
 
 
@@ -298,7 +302,7 @@ sortButton {
     left: 50%;
     margin-left: -200px;
     width: 400px;
-    z-index: 1;
+    z-index: 3;
 }
 
 
