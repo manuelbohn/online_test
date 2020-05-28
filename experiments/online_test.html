@@ -16,30 +16,28 @@
     <div class='barl'></div>
     <div class='barr'></div>
 
-
-    <img src="images/intro.png" style="position:absolute;top: 70px;left: 50%; margin-left: -100 ;WIDTH: 200px;z-index:1;" >
-    <img src="images/mpi_eva2.png" style="position:absolute;bottom: 5%;left: 20%; WIDTH: 35%;z-index:-1;" >
-    <img src="images/contact.png" style="position:absolute;bottom: 5%;right: 20%; WIDTH: 12%;z-index:-1;" >
+    <img src="images/mpi_eva2.png" style="position:absolute;top: 600px;left: 20%; WIDTH: 35%;z-index:-1;" >
+    <img src="images/contact.png" style="position:absolute;top: 600px;right: 20%; WIDTH: 12%;z-index:-1;" >
 
     <p class="text">
       <p id='logo-text'>Willkommmen zur online Kinderstudie</p>
     </p>
 
-    <p class="block-text" align="center" style="position:relative;top: 150px">
+    <p class="block-text" align="center">
       Vielen Dank f&uuml;r Ihr Interesse an unserer Studie! Wir hoffen, Sie und Ihr Kind werden Spass haben.  Damit die Studie gelingt brauchen wir Ihre Hilfe als "StudienleiterIn". Auf der n&auml;chsten Seite haben wir eine kleine Anleitung vorbereitet.
     </p>
 
-    <p class="block-text" align="center" style="position:relative;top: 150px">
+    <p class="block-text" align="center">
 Falls Sie Fragen haben, wenden Sie sich an die Email Adresse unten rechts. Ihre Teilnahme an dieser Studie is selbstverst&auml;ndlich freiwillig. Alle Daten die wir im Zuge der Studie erheben werden in anonymisierter Form auf einem sicheren Server am Max Planck Institut in Leipzig gespeichert. Sie k&ouml;nenn die Studie jederzeit abbrechen indem Sie das Fenster schlie&szlig;en. Fall Sie Ihre Daten von der Studie zurückziehen wollen, schreiben Sie, unter Angabe des Codes aus der Einladungsemail, an die untenstehende Emailadresse.
     </p>
 
-    <p class="block-text" align="center" style="position:relative;top: 150px">
+    <p class="block-text" align="center" >
 Bevor es los geht, brauchen wir noch den Code, den wir Ihnen per Email zugeschickt haben. Um weiter zu gehen klicken Sie einfach auf den grauen Knopf am unteren Ende der Seite. Vielen Dank und viel Spass!
     </p>
 
     <p class="block-text" >
 
-      <center style="position:relative;top: 150px">
+      <center >
         Bitte geben Sie hier den X-stelligen Code aus unserer Email ein.<br>
         <br>
         Code: <br>
@@ -47,7 +45,7 @@ Bevor es los geht, brauchen wir noch den Code, den wir Ihnen per Email zugeschic
       </center>
     </p>
 
-    <center style="position:relative;top: 150px; z-index:2">
+    <center style="z-index:2">
       <button type="button" onClick="this.blur(); train.checkInput()">Los geht's</font></button>
       <div id="checkMessage"> </div>
     </center>
@@ -72,7 +70,7 @@ Bevor es los geht, brauchen wir noch den Code, den wir Ihnen per Email zugeschic
       <button type="button" onClick="this.blur(); showSlide('select')" style=" WIDTH: 200px ">Weiter zu den Spielen</font></button>
     </center>
 
-    <img src="images/praise.png" style="position:absolute;bottom: 5%;left: 50%; WIDTH: 200px; margin-left: -100px;z-index:-1;" >
+    <img src="images/praise.png" style="position:absolute;top: 250px;left: 50%; WIDTH: 200px; margin-left: -100px;z-index:-1;" >
 
   </div>
 
@@ -136,21 +134,26 @@ Sie können sich so viel Zeit für die Spiele nehmen wie Sie möchten. Falls ihr
           </p>
 
 
+          <img src="images/hill.png" style="position:absolute;TOP: 360px;LEFT: 50%; margin-left: -50 ;WIDTH: 100px;z-index: 1;">
+
+          <img src="images/Dog_straight.png" style="position:absolute;TOP: 290px;LEFT: 50%; margin-left: -50 ;WIDTH: 100px;">
+
+          <img src="images/bear_me.png" style="position:absolute;TOP: 340px;LEFT: 37%; margin-left: -27.5 ;WIDTH: 55px;z-index:1;">
+          <img src="images/table_l.png" style="position:absolute;TOP: 390px;LEFT: 37%; margin-left: -45 ;WIDTH: 90px;">
+
+          <img src="images/ball.png" style="position:absolute;TOP: 340px; right: 37%;margin-right: -27.5 ;WIDTH: 55px;z-index:1;">
+          <img src="images/table_r.png" style="position:absolute;TOP: 390px; right: 37%; margin-right: -45 ;WIDTH: 90px;">
 
 
-          <img src="images/hill.png" style="position:absolute;TOP: 400px;LEFT: 50%; margin-left: -95 ;WIDTH: 190px;z-index: 1;">
-          <img src="images/Dog_straight.png" style="position:absolute;TOP: 260px;LEFT: 50%; margin-left: -100 ;WIDTH: 200px;">
 
-          <img src="images/bear_me.png" style="position:absolute;TOP: 350px;LEFT: 25%; margin-left: -55 ;WIDTH: 110px;z-index:1;">
-          <img src="images/table_l.png" style="position:absolute;TOP: 450px;LEFT: 25%; margin-left: -90 ;WIDTH: 180px;">
 
-          <img src="images/ball.png" style="position:absolute;TOP: 350px; LEFT: 75%; margin-left: -55 ;WIDTH: 110px;z-index:1;">
-          <img src="images/table_r.png" style="position:absolute;TOP: 450px; LEFT: 75%; margin-left: -90 ;WIDTH: 180px;">
+      <center>
+      <button type="button" onClick="this.blur(); train.next();">Starte das Spiel</button>
+      </center>
+
 
         </tbody>
       </table>
-
-      <nextButton type="button" onClick="this.blur(); train.next()">Starte das Spiel</nextButton>
     </div>
   </div>
 
@@ -230,7 +233,7 @@ Sie können sich so viel Zeit für die Spiele nehmen wie Sie möchten. Falls ihr
           </tbody>
         </table>
 
-        <nextButton id="button" type="button" onClick="this.blur(); discon.intro();">Starte Spiel</nextButton>
+        <button id="button" type="button" onClick="this.blur(); discon.intro();">Starte Spiel</nextButton>
 
       </div>
     </div>
@@ -645,9 +648,6 @@ Sie können sich so viel Zeit für die Spiele nehmen wie Sie möchten. Falls ihr
       </div>
 
 
-
-
-
       <!-- The finish slide. -->
       <div class="slide" id="finished">
 
@@ -655,12 +655,12 @@ Sie können sich so viel Zeit für die Spiele nehmen wie Sie möchten. Falls ihr
         <div class='barr'></div>
         <div style="width: 100%; margin: 0 auto; text-align: center; ">
 
-  <img src="images/intro.png" style="position:absolute;top: 250px;left: 50%; margin-left: -200 ;WIDTH: 400px;z-index:1;" >
+  <img src="images/intro.png" style="position:absolute;top: 250px;left: 50%; margin-left: -150 ;WIDTH: 300px;z-index:1;" >
 
-  <img src="images/mpi_eva2.png" style="position:absolute;bottom: 5%;left: 20%; WIDTH: 35%;z-index:-1;" >
-  <img src="images/contact.png" style="position:absolute;bottom: 5%;right: 20%; WIDTH: 12%;z-index:-1;" >
+  <img src="images/mpi_eva2.png" style="position:absolute;top: 600px;left: 20%; WIDTH: 35%;z-index:-1;" >
+  <img src="images/contact.png" style="position:absolute;top: 600px;right: 20%; WIDTH: 12%;z-index:-1;" >
         </div>
-        <br><br>
+
         <center>
           <p id='logo-text'>Vielen Dank fürs Mitspielen!</p>
         </center>
