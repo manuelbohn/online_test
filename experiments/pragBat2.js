@@ -627,14 +627,14 @@ var train = {
 	   dot.src = "dots/dot_" + dots[i] + ".jpg";
 
 	   var x = Math.floor(Math.random() * 850);
-	   var y = Math.floor(Math.random() * 550);
+	   var y = Math.floor(Math.random() * 450+100);
 
 	   var invalid = "true";
 	//make sure dots do not overlap
 	   while (true) {
 		invalid = "true";
 		for (j = 0; j < dotx.length; j++) {
-			if (Math.abs(dotx[j] - x) + Math.abs(doty[j] - y) < 200) {
+			if (Math.abs(dotx[j] - x) + Math.abs(doty[j] - y) < 200 ) {
 				var invalid = "false";
 				break;
 			}
@@ -648,7 +648,7 @@ var train = {
 		y = Math.floor(Math.random() * 400);
 	}
 
-	dot.setAttribute("style", "position:absolute;left:" + x + "px;top:" + y + "px;");
+	dot.setAttribute("style", "position:absolute;left:" + x + "px;bottom:" + y + "px;");
 
 	trainingDot.appendChild(dot);
 };

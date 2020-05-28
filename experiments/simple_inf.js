@@ -21,7 +21,7 @@ var simple_inf = {
     // end of the experiment
     end: function() {
       // Show the finish slide.
-      showSlide("select");
+      showSlide("finished");
       $(".table_l").show();
       $(".table_r").show();
       setTimeout(function() { turk.submit(simple_inf) }, 500);

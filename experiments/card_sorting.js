@@ -16,14 +16,14 @@ var sort = {
     // end of the experiment
     end: function () {
         // Show the finish slide.
-        showSlide("select");
+        showSlide("finished");
         setTimeout(function () {
             turk.submit(sort)
         }, 500);
     },
 
 
-    // unbind and shift variables between trials      
+    // unbind and shift variables between trials
     newtrial: function () {
 
         $(".target_l").css("border", "none")
@@ -113,7 +113,7 @@ var sort = {
         }
 
         $(".target_l").click(function () {
-            
+
             event.target.style.border = '5px solid orange';
 
             $(".selector").show();
@@ -156,7 +156,7 @@ var sort = {
             };
 
 
-            // data collected  
+            // data collected
             data = {
                 subid: train.subid,
                 subage: train.subage,
@@ -173,7 +173,7 @@ var sort = {
             sort.data.push(data);
         });
 
-        
+
         $(".target_r").click(function () {
 
             $(".selector").show();
@@ -218,7 +218,7 @@ var sort = {
             };
 
 
-            // data collected  
+            // data collected
             data = {
                 subid: train.subid,
                 subage: train.subage,
