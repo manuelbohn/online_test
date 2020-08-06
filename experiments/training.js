@@ -10,7 +10,7 @@ for (i = 0; i < preFruits.length; i++) {
 
 var preSounds = [
          "Monkey_hello.mp3",
-    "Monkey_filler_inf_intro.mp3",
+    		 "Monkey_filler_inf_intro.mp3",
 "Monkey_filler_label.mp3",
 "Monkey_filler_more.mp3",
 "Monkey_filler_which.mp3",
@@ -103,10 +103,11 @@ var preloadAudios = ["hi", "lets", "intro", "thank", "it"];
 var posAgents = ["Bunny","Monkey","Dog","Frog","Cat"]
 
 
-// change button color on click 
+// change button color on click
 
 function submitButtonStyle(_this) {
-  _this.style.backgroundColor = "green";
+//  _this.style.backgroundColor = "green";
+	_this.style.visibility = "hidden";
 }
 
 
@@ -130,10 +131,22 @@ function showAgent(id, orient) {
 	$(".agent").hide();
     $(".point_agent_l").hide();
     $(".point_agent_r").hide();
-        $(".look_agent_l").hide();
+    $(".look_agent_l").hide();
     $(".look_agent_r").hide();
+
 	$("#"+id+"_"+orient).show();
 }
+
+function showInfAgent(id, orient) {
+		$(".agent_inf").hide();
+		$(".point_agent_l_inf").hide();
+		$(".point_agent_r_inf").hide();
+		$(".look_agent_l_inf").hide();
+		$(".look_agent_r_inf").hide();
+
+	$("#"+id+"_"+orient).show();
+}
+
 
 function hideAgent() {
 	$(".agent").hide();
@@ -148,6 +161,13 @@ function choiceAgent(id) {
     $(".look_agent_r").hide();
 	$("#"+id+"_choice").show();
 }
+
+function choiceInfAgent(id) {
+    $(".agent_inf").hide();
+	$("#"+id+"_choice").show();
+}
+
+
 
 function sourceRightFruit(a) {
    	$(".fruit_inf_r").hide();
@@ -236,6 +256,39 @@ function choiceLeftFruit(a) {
             $(".fruit_l").show();
     document.getElementById("choiceFruit_l").src = a;
 };
+
+function leftObject(a) {
+        $(".object_l").show();
+    document.getElementById("obj_l").src = a;
+};
+
+function rightObject(a) {
+        $(".object_r").show();
+    document.getElementById("obj_r").src = a;
+};
+
+
+function leftInfObject(a) {
+        $(".inf_ob_l").show();
+    document.getElementById("inf_ob_l").src = a;
+};
+
+function rightInfObject(a) {
+        $(".inf_ob_r").show();
+    document.getElementById("inf_ob_r").src = a;
+};
+
+
+function choiceLeftInfObject(a) {
+        $(".choice_inf_ob_l").show();
+    document.getElementById("choice_inf_ob_l").src = a;
+};
+
+function choiceRightInfObject(a) {
+        $(".choice_inf_ob_r").show();
+    document.getElementById("choice_inf_ob_r").src = a;
+};
+
 
 
 
@@ -347,8 +400,8 @@ function showRightChoiceFriend(id) {
   function pause(id,time){
       $("#"+id).hide();
       setTimeout(function() {
-           $("#"+id).show();    
-       }, time); 
+           $("#"+id).show();
+       }, time);
     };
 
 
@@ -370,41 +423,41 @@ var train = {
   leftFruit: ["bear_me","ball"],
   back: [1,2],
   data: [],
-        
-   
-    
+
+
+
 // end of the experiment
   end: function() {
     // Show the finish slide.
     showSlide("select");
     setTimeout(function() { turk.submit(train)}, 500);
   },
-    
-// end of training  
- 
-// what happens between trials - display agent from previous trial and click on it to move on to the next trial  
+
+// end of training
+
+// what happens between trials - display agent from previous trial and click on it to move on to the next trial
     eat: function(event) {
 
     setTimeout(function() {train.eat2() }, 1500);
-     
+
     $(".fruit_r").unbind("click");
-    $(".fruit_l").unbind("click");    
-        
-    showSlide("choice");  
-       
+    $(".fruit_l").unbind("click");
+
+    showSlide("choice");
+
     event.target.style.border = '5px solid blue';
-    
+
     sourceSound("sound/end.mp3");
     playSound();
-        
-   
-   // get time for reaction time       
+
+
+   // get time for reaction time
     // select correct object
     var corrFruit = $(".fruit_"+train.cor_pos[0][0]).attr("src");
 
-    // select chosen object    
+    // select chosen object
     var pick = event.target.src;
-        
+
 
      // code correct: does name of chosen object contain the name of the correct object
     if (pick.indexOf(corrFruit) > -1) {
@@ -412,13 +465,11 @@ var train = {
         } else {
         var correct = 0
         };
-      
+
     var subid = train.subid;
-    var subage = train.subage;    
-    // data collected  
+    // data collected
       data = {
         subid: train.subid,
-        subage: train.subage,
         task: "training",
         trial: train.trial[0],
         agent: train.agents[0],
@@ -429,141 +480,142 @@ var train = {
         correct: correct
             };
       train.data.push(data);
-   
+
   },
- 
+
  eat2: function(event) {
-    
+
     showSlide("eat");
-    
+
     background("images/back"+train.back[0]+".jpg");
-    
+
     sourceSound("sound/end.mp3");
     playSound();
-   
+
     showEat(train.agents[0])
-   
-    $(".agent_eat").click(train.newtrial);     
-  
-},     
- // unbind and shif variables between trials       
+
+		setTimeout(function() {train.newtrial() }, 1500);
+
+},
+ // unbind and shif variables between trials
  newtrial: function() {
-    
+
     $(".fruit_l").css("border","none")
-    $(".fruit_r").css("border","none") 
-     
-    $(".agent_eat").unbind("click"); 
-   
-   
+    $(".fruit_r").css("border","none")
+
+    $(".agent_eat").unbind("click");
+
+
     sourceLeftFruit("images/empty.png");
-            showLeftFruit(); 
+            showLeftFruit();
     sourceRightFruit("images/empty.png");
             showRightFruit();
-     
-     
-    train.trial.shift();  
-    train.agentOrient.shift();   
+
+
+    train.trial.shift();
+    train.agentOrient.shift();
     train.agents.shift();
     train.rightFruit.shift();
     train.leftFruit.shift();
     train.back.shift();
     train.cor_pos.shift();
-  
+
     train.next();
   },
 // Slide recording the choice
 
-// recording the choice 
+// recording the choice
   choice: function(event) {
-    
-    showSlide("choice"); 
-      
+
+    showSlide("choice");
+
       $(".tree_l_c").hide();
       $(".tree_r_c").hide();
       $(".selector_l").hide();
       $(".selector_r").hide();
-    
+
     choiceAgent(train.agents[0]);
-      
-    background2("images/back"+train.back[0]+".jpg");  
-    
-    // show objects  
+
+    background2("images/back"+train.back[0]+".jpg");
+
+    // show objects
     choiceLeftFruit("images/"+train.leftFruit[0]+".png");
-    choiceRightFruit("images/"+train.rightFruit[0]+".png");          
+    choiceRightFruit("images/"+train.rightFruit[0]+".png");
 
     sourceSound("sound/"+train.agents[0]+"_train.mp3");
     playSound()
-    
-    // choice can be made by clicking the objects after - possible after 8s  
-    setTimeout(function() {      
+
+    // choice can be made by clicking the objects after - possible after 8s
+    setTimeout(function() {
     $(".fruit_r").click(train.eat);
     $(".fruit_l").click(train.eat);
 }, 000);
-  
+
   },
 // moving on within a trial.
   next: function() {
 
-      $(".moveButton").unbind("click"); 
-      
-    // if no more trials are left, end experiment   
+      $(".moveButton").unbind("click");
+
+    // if no more trials are left, end experiment
     if (train.trial.length == 0){
         setTimeout(function() {train.end() }, 0);
       return;
-    };  
-  
-    // after exposure is finished, switch to choice  
+    };
+
+    // after exposure is finished, switch to choice
     if (train.agentOrient[0][0] == "down") {
       setTimeout(function() {train.choice() }, 0);
       return;
-    };  
-   // play sound depending on agent orientation  
-    
-    showSlide("stage");  
-      
+    };
+   // play sound depending on agent orientation
+
+    showSlide("stage");
+
     	$(".tree_l").hide();
     	$(".tree_r").hide();
-      
+
     background("images/back"+train.back[0]+".jpg");
-      
+
     showAgent(train.agents[0],train.agentOrient[0][0]);
-    
+
     // show objects on tables
     sourceRightFruit("images/"+train.rightFruit[0]+".png");
-            showRightFruit();  
-     
+            showRightFruit();
+
     sourceLeftFruit("images/"+train.leftFruit[0]+".png");
-            showLeftFruit();  
-    
-    // play sound depending on agent orientation 
-    // agent says hello  
-   if (train.agentOrient[0][0] == "straight") {  
-        pause("moveButton",1500); 
+            showLeftFruit();
+
+    // play sound depending on agent orientation
+    // agent says hello
+   if (train.agentOrient[0][0] == "straight") {
+        pause("moveButton",1500);
         sourceSound("sound/"+train.agents[0]+"_hello.mp3");
         playSound();
-    }; 
-    // move on to next phase of exposure 
-    train.agentOrient[0].shift(); 
+    };
+    // move on to next phase of exposure
+    train.agentOrient[0].shift();
      $(".moveButton").click(train.next);
   },
     checkInput: function() {
 		//subject ID
 		if (document.getElementById("subjectID").value.length < 1) {
-			$("#checkMessage").html('<font color="red">Bitte Kind ID eintragen</font>');
+			$("#checkMessage").html('<font color="red">Bitte Code eintragen</font>');
 			return;
 		}
-        if (document.getElementById("subjectAge").value.length < 1) {
-			$("#checkMessage").html('<font color="red">Bitte Alter des Kindes eingeben</font>');
-			return;
-		}
+//        if (document.getElementById("subjectAge").value.length < 1) {
+//			$("#checkMessage").html('<font color="red">Bitte Alter des Kindes eingeben</font>');
+//			return;
+//		}
 		train.subid = document.getElementById("subjectID").value
-        train.subage = document.getElementById("subjectAge").value
-        train.trainingDot()
-      },        
-    
-    
+      //  train.subage = document.getElementById("subjectAge").value
+ 				showSlide('intro')
+
+      },
+
+
     trainingDot: function() {
-		
+
     function createDot(dotx, doty, i) {
 	   var dots = [1, 2, 3, 4, 5];
 
@@ -573,14 +625,14 @@ var train = {
 	   dot.src = "dots/dot_" + dots[i] + ".jpg";
 
 	   var x = Math.floor(Math.random() * 850);
-	   var y = Math.floor(Math.random() * 550);
+	   var y = Math.floor(Math.random() * 450+100);
 
 	   var invalid = "true";
 	//make sure dots do not overlap
-	   while (true) {  
+	   while (true) {
 		invalid = "true";
 		for (j = 0; j < dotx.length; j++) {
-			if (Math.abs(dotx[j] - x) + Math.abs(doty[j] - y) < 200) {
+			if (Math.abs(dotx[j] - x) + Math.abs(doty[j] - y) < 200 ) {
 				var invalid = "false";
 				break;
 			}
@@ -594,12 +646,12 @@ var train = {
 		y = Math.floor(Math.random() * 400);
 	}
 
-	dot.setAttribute("style", "position:absolute;left:" + x + "px;top:" + y + "px;");
+	dot.setAttribute("style", "position:absolute;left:" + x + "px;bottom:" + y + "px;");
 
 	trainingDot.appendChild(dot);
 };
 
-        
+
         var allDots = ["dot_1", "dot_2", "dot_3", "dot_4", "dot_5"];
 
 		var xcounter = 0;

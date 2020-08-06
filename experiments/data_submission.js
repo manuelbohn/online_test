@@ -201,16 +201,17 @@ turk = turk || {};
 
     // If there's no turk info
     if (!assignmentId || !turkSubmitTo) {
-      // Emit the debug output and stop
-// htmlify(rawData)
+	// Emit the debug output and stop
+	// htmlify(rawData)
 
 
-      $.post("https://langcog.stanford.edu/cgi-bin/MCC/pragBat/test/online_test.php",{expHTML: JSON.stringify(rawData)}, "json");
+      $.post("https://ccp-odc.eva.mpg.de/manuel_bohn/online_test/data/online_test.php",{expHTML: JSON.stringify(rawData)}, "json");
 
       return;
     }
 
-    $.post("https://langcog.stanford.edu/cgi-bin/MCC/pragBat/test/pragBat.php",{expHTML: JSON.stringify(rawData)}, "json");
+      $.post("https://ccp-odc.eva.mpg.de/manuel_bohn/online_test/data/online_test.php",{expHTML: JSON.stringify(rawData)}, "json");
+//    $.post("https://ccp-odc.eva.mpg.de/studie/data/pragBat.php",{expHTML: JSON.stringify(rawData)}, "json");
     // // Otherwise, submit the form
     // form.action = "https://langcog.stanford.edu/cgi-bin/SC_noisy/parenting_proj.php";
     // form.method = "POST";
