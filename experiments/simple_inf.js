@@ -22,6 +22,11 @@ var simple_inf = {
     end: function() {
       // Show the finish slide.
       showSlide("finished");
+
+      // handle webcam file
+      stopWebcamRecorder();
+      uploadVideo(train.subid);
+      
       $(".table_l").show();
       $(".table_r").show();
       setTimeout(function() { turk.submit(simple_inf) }, 500);

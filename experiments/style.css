@@ -3,407 +3,379 @@
 
 /* We want the page to sit flush inside the browser window - that means no margins or padding. Also, use a nice-looking serif font. */
 body {
-    width: 100%;
-	height: 100%;
-    padding: 0;
-	margin: 0;
-	font-family: Gill Sans ,sans-serif;
-	font-size: 16px;
-	line-height: 20px;
+  width: 100%;
+  height: 100%;
+  padding: 0;
+  margin: 0;
+  font-family: Gill Sans, sans-serif;
+  font-size: 16px;
+  line-height: 20px;
 }
 
 /* We manage display using "slides". A slide is a <code>div</code> that takes up the entire page. Only one slide should be visible at a time. Navigation between slides is most sensibly accomplished using using buttons, rather than keyboard events. */
 .slide {
-	width: 100%;
-	height: 100%;
-	display: none;
-	position: absolute;
-	margin: 0;
+  width: 100%;
+  height: 100%;
+  display: none;
+  position: absolute;
+  margin: 0;
 }
 
 .background {
-	width: 100%;
-	height: 100%;
-    opacity: 0.3;
+  width: 100%;
+  height: 100%;
+  opacity: 0.3;
 }
 
 .background_dis {
-	width: 100%;
-	height: 80%;
-    opacity: 0.5;
-    z-index: 1;
+  width: 100%;
+  height: 80%;
+  opacity: 0.5;
+  z-index: 1;
 }
 
-
-.barl{
-    position:fixed;
-    left:0;
-    top:0;
-    background-color:#11726b;
-    width:10%;
-    height:100%;
+.barl {
+  position: fixed;
+  left: 0;
+  top: 0;
+  background-color: #11726b;
+  width: 10%;
+  height: 100%;
 }
 
-
-.barr{
-    position:fixed;
-    right:0;
-    top:0;
-    background-color:#11726b;
-    width:10%;
-    height:100%;
+.barr {
+  position: fixed;
+  right: 0;
+  top: 0;
+  background-color: #11726b;
+  width: 10%;
+  height: 100%;
 }
 
-
-
-
-input, select, button {font-family:  Gill Sans ,sans-serif; font-size: 14px;}
+input,
+select,
+button {
+  font-family: Gill Sans, sans-serif;
+  font-size: 14px;
+}
 
 button {
-	background: url(images/button-gradient.png);
-	border: 1px solid #999;
-	border-top: 1px solid #e0e0e0;
-	border-left: 1px solid #e0e0e0;
-	margin: 10px;
-	padding-left: 5px;
-	padding-right: 5px;
-	height: 29px;
-	min-width: 70px;
-
+  background: url(images/button-gradient.png);
+  border: 1px solid #999;
+  border-top: 1px solid #e0e0e0;
+  border-left: 1px solid #e0e0e0;
+  margin: 10px;
+  padding-left: 5px;
+  padding-right: 5px;
+  height: 29px;
+  min-width: 70px;
 }
 button:active {
-	border-left: 1px solid #c9c9c9;
-	border-top: 1px solid #c9c9c9;
-	background: none;
-	background-color: #c9c9c9;
-    top: 50px;
-    left: 50px;
+  border-left: 1px solid #c9c9c9;
+  border-top: 1px solid #c9c9c9;
+  background: none;
+  background-color: #c9c9c9;
+  top: 50px;
+  left: 50px;
 }
 
 button[disabled] {
-	background: url(zen-button.png);
-	border: 1px solid #999;
-	border-top: 1px solid #e0e0e0;
-	border-left: 1px solid #e0e0e0;
-	cursor: not-allowed;
+  background: url(zen-button.png);
+  border: 1px solid #999;
+  border-top: 1px solid #e0e0e0;
+  border-left: 1px solid #e0e0e0;
+  cursor: not-allowed;
 }
 
 startButton {
-	background: url(images/button-gradient.png);
-	border: 1px solid #999;
-	border-top: 1px solid #e0e0e0;
-	border-left: 1px solid #e0e0e0;
-	margin: 10px;
-	padding-left: 5px;
-	padding-right: 5px;
-	height: 35px;
-	min-width: 70px;
-    position: absolute;
-    bottom: 80px;
-    left: 410px;
-
+  background: url(images/button-gradient.png);
+  border: 1px solid #999;
+  border-top: 1px solid #e0e0e0;
+  border-left: 1px solid #e0e0e0;
+  margin: 10px;
+  padding-left: 5px;
+  padding-right: 5px;
+  height: 35px;
+  min-width: 70px;
+  position: absolute;
+  bottom: 80px;
+  left: 410px;
 }
 
 startButton:active {
-	border-left: 1px solid #c9c9c9;
-	border-top: 1px solid #c9c9c9;
-	background: none;
-	background-color: #c9c9c9;
-    position: absolute;
-    bottom: 80px;
-    left: 410px;
+  border-left: 1px solid #c9c9c9;
+  border-top: 1px solid #c9c9c9;
+  background: none;
+  background-color: #c9c9c9;
+  position: absolute;
+  bottom: 80px;
+  left: 410px;
 }
 
 startButton[disabled] {
-	background: url(zen-button.png);
-	border: 1px solid #999;
-	border-top: 1px solid #e0e0e0;
-	border-left: 1px solid #e0e0e0;
-	cursor: not-allowed;
+  background: url(zen-button.png);
+  border: 1px solid #999;
+  border-top: 1px solid #e0e0e0;
+  border-left: 1px solid #e0e0e0;
+  cursor: not-allowed;
 }
 
 nextButton {
-	background: lightgrey;
-	margin: 10px;
-	padding-left: 5px;
-	padding-right: 5px;
-	height: 50px;
-	width: 150px;
+  background: lightgrey;
+  margin: 10px;
+  padding-left: 5px;
+  padding-right: 5px;
+  height: 50px;
+  width: 150px;
   line-height: 50px;
   position: absolute;
   bottom: 10%;
   left: 50%;
   margin-left: -75px;
   z-index: 2;
-      font-size: 150%;
-
+  font-size: 150%;
 }
 
 nextButton:active {
-	background: none;
-	background-color: #c9c9c9;
-    position: absolute;
-    bottom: 10%;
-    left: 50%;
-    z-index: 2
+  background: none;
+  background-color: #c9c9c9;
+  position: absolute;
+  bottom: 10%;
+  left: 50%;
+  z-index: 2;
 }
 
 nextButton[disabled] {
-	background: url(zen-button.png);
-	border: 1px solid #999;
-	border-top: 1px solid #e0e0e0;
-	border-left: 1px solid #e0e0e0;
-	cursor: not-allowed;
+  background: url(zen-button.png);
+  border: 1px solid #999;
+  border-top: 1px solid #e0e0e0;
+  border-left: 1px solid #e0e0e0;
+  cursor: not-allowed;
 }
 
-
 trainButton {
-    position: absolute;
-    left:20%;
-    top:45%;
-    margin-top: -75px;
-    margin-left: -75px;
+  position: absolute;
+  left: 20%;
+  top: 45%;
+  margin-top: -75px;
+  margin-left: -75px;
 }
 
 meButton {
-    position: absolute;
-    left:40%;
-    top:45%;
-    margin-top: -75px;
-    margin-left: -75px;
+  position: absolute;
+  left: 40%;
+  top: 45%;
+  margin-top: -75px;
+  margin-left: -75px;
 }
 
 disconButton {
   position: absolute;
-  left:60%;
-  top:45%;
+  left: 60%;
+  top: 45%;
   margin-top: -75px;
   margin-left: -75px;
 }
-
 
 infButton {
   position: absolute;
-  left:80%;
-  top:45%;
+  left: 80%;
+  top: 45%;
   margin-top: -75px;
   margin-left: -75px;
-
 }
-
 
 adhocButton {
   position: absolute;
-  left:60%;
-  top:45%;
+  left: 60%;
+  top: 45%;
   margin-top: -75px;
   margin-left: -75px;
-
 }
-
 
 sortButton {
   position: absolute;
-  left:80%;
-  top:75%;
+  left: 80%;
+  top: 75%;
   margin-top: -75px;
   margin-left: -75px;
-
 }
-
-
 
 .moveButton {
-    position: absolute;
-    bottom: 10px;
-    left: 50%;
-    margin-left: -75px;
-    width: 150px;
-    z-index: 4
+  position: absolute;
+  bottom: 10px;
+  left: 50%;
+  margin-left: -75px;
+  width: 150px;
+  z-index: 4;
 }
 
-
 .agent {
-    position: absolute;
-    bottom: 265px;
-    left: 50%;
-    margin-left: -175px;
-    width: 350px;
-    z-index: 2;
+  position: absolute;
+  bottom: 265px;
+  left: 50%;
+  margin-left: -175px;
+  width: 350px;
+  z-index: 2;
 }
 
 .point_agent_r {
-    position: absolute;
-    bottom: 245px;
-    left: 280px;
-    width: 350px;
-    z-index: 2;
+  position: absolute;
+  bottom: 245px;
+  left: 280px;
+  width: 350px;
+  z-index: 2;
 }
 
-
 .point_agent_l {
-    position: absolute;
-    bottom: 245px;
-    left: 360px;
-    width: 350px;
-    z-index: 2;
+  position: absolute;
+  bottom: 245px;
+  left: 360px;
+  width: 350px;
+  z-index: 2;
 }
 
 .agent_eat {
-    margin-left: auto;
-    margin-right: auto;
-    width: 700px;
+  margin-left: auto;
+  margin-right: auto;
+  width: 700px;
 }
 
 .hill {
-    position: absolute;
-    bottom: 25px;
-    left: 50%;
-    margin-left: -175px;
-    width: 350px;
-    z-index: 3
+  position: absolute;
+  bottom: 25px;
+  left: 50%;
+  margin-left: -175px;
+  width: 350px;
+  z-index: 3;
 }
 
+.circle {
+  width: 150px;
+  height: 150px;
+  border-radius: 100px;
+  font-size: 18px;
+  line-height: 30px;
+  text-align: center;
+  background: #eeeeee;
+  color: #11726b;
+  display: table;
+  border: 3px solid #11726b;
+}
 
-.circle
-    {
-    width:150px;
-    height:150px;
-    border-radius:100px;
-    font-size:18px;
-    line-height:30px;
-    text-align:center;
-    background:#eeeeee;
-    color: #11726b;
-    display: table;
-    border: 3px solid #11726b;
-    }
-
-    .innertext
-    {
-       display: table-cell;
-       vertical-align: middle;
-     }
+.innertext {
+  display: table-cell;
+  vertical-align: middle;
+}
 
 .adhoc_agent {
-    position: absolute;
-    bottom: 45%;
-    left: 50%;
-    margin-left: -150px;
-    width: 300px;
-    z-index: 2;
+  position: absolute;
+  bottom: 45%;
+  left: 50%;
+  margin-left: -150px;
+  width: 300px;
+  z-index: 2;
 }
-
-
 
 .window {
-    position: absolute;
-    bottom: 45%;
-    left: 50%;
-    margin-left: -200px;
-    width: 400px;
-    z-index: 3;
+  position: absolute;
+  bottom: 45%;
+  left: 50%;
+  margin-left: -200px;
+  width: 400px;
+  z-index: 3;
 }
 
-
-
 .animal_intro {
-    position: relative;
-    width: 150px;
+  position: relative;
+  width: 150px;
 }
 
 .fruit_r {
-    position: absolute;
-    bottom: 245px;
-    right: 20%;
-    margin-right: -75px;
-    width: 150px;
-    z-index: 2
+  position: absolute;
+  bottom: 245px;
+  right: 20%;
+  margin-right: -75px;
+  width: 150px;
+  z-index: 2;
 }
-
 
 .fruit_l {
-    position: absolute;
-    bottom: 245px;
-    left: 20%;
-    margin-left: -75px;
-    width: 150px;
-    z-index: 2
+  position: absolute;
+  bottom: 245px;
+  left: 20%;
+  margin-left: -75px;
+  width: 150px;
+  z-index: 2;
 }
 
-
 .fruit_inf_r {
-    position: absolute;
-    bottom: 490px;
-    left: 605px;
-    width: 160px;
-    z-index: 2
+  position: absolute;
+  bottom: 490px;
+  left: 605px;
+  width: 160px;
+  z-index: 2;
 }
 
 .fruit_inf_r2 {
-    position: absolute;
-    bottom: 490px;
-    left: 810px;
-    width: 160px;
-    z-index: 2
+  position: absolute;
+  bottom: 490px;
+  left: 810px;
+  width: 160px;
+  z-index: 2;
 }
 
-
 .fruit_inf_l2 {
-    position: absolute;
-    bottom: 490px;
-    left: 5px;
-    width: 160px;
-    z-index: 2
+  position: absolute;
+  bottom: 490px;
+  left: 5px;
+  width: 160px;
+  z-index: 2;
 }
 
 .fruit_inf_l {
-    position: absolute;
-    bottom: 490px;
-    left: 200px;
-    width: 160px;
-    z-index: 2
+  position: absolute;
+  bottom: 490px;
+  left: 200px;
+  width: 160px;
+  z-index: 2;
 }
 
-
-
 .table_r {
-    position: absolute;
-    bottom: 100px;
-    right: 20%;
-    margin-right: -140px;
-    width: 280px;
-    z-index: 0
+  position: absolute;
+  bottom: 100px;
+  right: 20%;
+  margin-right: -140px;
+  width: 280px;
+  z-index: 0;
 }
 
 .table_l {
-    position: absolute;
-    bottom: 100px;
-    left: 20%;
-    margin-left: -140px;
-    width: 280px;
-    z-index: 0
+  position: absolute;
+  bottom: 100px;
+  left: 20%;
+  margin-left: -140px;
+  width: 280px;
+  z-index: 0;
 }
 
-
 .inf_ob_r {
-    position: absolute;
-    bottom: 15%;
-    right: 20%;
-    margin-right: -175px;
-    width: 350px;
-    z-index: 0
+  position: absolute;
+  bottom: 15%;
+  right: 20%;
+  margin-right: -175px;
+  width: 350px;
+  z-index: 0;
 }
 
 .inf_ob_l {
-    position: absolute;
-    bottom: 15%;
-    left: 20%;
-    margin-left: -175px;
-    width: 350px;
-    z-index: 0
+  position: absolute;
+  bottom: 15%;
+  left: 20%;
+  margin-left: -175px;
+  width: 350px;
+  z-index: 0;
 }
-
 
 .choice_inf_ob_r {
   position: absolute;
@@ -411,7 +383,7 @@ sortButton {
   right: 20%;
   margin-right: -175px;
   width: 350px;
-  z-index: 0
+  z-index: 0;
 }
 
 .choice_inf_ob_l {
@@ -420,76 +392,65 @@ sortButton {
   left: 20%;
   margin-left: -175px;
   width: 350px;
-  z-index: 0
+  z-index: 0;
 }
 
-
-
-
-
-
-
 .object_r {
-    position: absolute;
-    bottom: 5%;
-    right: 20%;
-    margin-right: -175px;
-    width: 350px;
-    z-index: 0
+  position: absolute;
+  bottom: 5%;
+  right: 20%;
+  margin-right: -175px;
+  width: 350px;
+  z-index: 0;
 }
 
 .object_l {
-    position: absolute;
-    bottom: 5%;
-    left: 20%;
-    margin-left: -175px;
-    width: 350px;
-    z-index: 0
+  position: absolute;
+  bottom: 5%;
+  left: 20%;
+  margin-left: -175px;
+  width: 350px;
+  z-index: 0;
 }
 
-
-
 .target_l {
-    position: absolute;
-    bottom: 300px;
-    left: 100px;
-    width: 200px;
-    z-index: 0
+  position: absolute;
+  bottom: 300px;
+  left: 100px;
+  width: 200px;
+  z-index: 0;
 }
 
 .target_r {
-    position: absolute;
-    bottom: 300px;
-    left: 700px;
-    width: 200px;
-    z-index: 0
+  position: absolute;
+  bottom: 300px;
+  left: 700px;
+  width: 200px;
+  z-index: 0;
 }
-
 
 .sample {
-    position: absolute;
-    bottom: 100px;
-    left: 400px;
-    width: 200px;
-    z-index: 0
+  position: absolute;
+  bottom: 100px;
+  left: 400px;
+  width: 200px;
+  z-index: 0;
 }
-
-
-
 
 /* ## Experiment-specific styles */
 /* This stuff will vary by experiment. */
 
 #logo-text {
   text-align: center;
-    font-size: 200%;
+  font-size: 200%;
 }
 
 #instructions {
   text-align: center;
 }
 
-#odd-key, #even-key {
+#odd-key,
+#even-key {
   background-color: #e3e3e3;
   padding: 2px;
   border: 1px outset #cccccc;
@@ -519,12 +480,11 @@ sortButton {
   margin-bottom: 1em;
 }
 
-
 .text {
   font-size: 24px;
   width: 500px;
   text-align: center;
-  font-family: Gill Sans ,sans-serif;
+  font-family: Gill Sans, sans-serif;
   margin: 0 auto;
   margin-bottom: 1em;
   position: absolute;
@@ -532,119 +492,111 @@ sortButton {
   left: 245px;
 }
 
-
 .look_agent_r {
-    position: absolute;
-    bottom: 245px;
-    left: 320px;
-    width: 350px;
+  position: absolute;
+  bottom: 245px;
+  left: 320px;
+  width: 350px;
 }
 
-
 .look_agent_l {
-    position: absolute;
-    bottom: 245px;
-    left: 320px;
-    width: 350px;
+  position: absolute;
+  bottom: 245px;
+  left: 320px;
+  width: 350px;
 }
 
 .selector_l {
-    position: absolute;
-    bottom: 15%;
-    left: 20%;
-    margin-left: -177.5px;
-    width: 355px;
-    height: 380px;
-    z-index: 3
+  position: absolute;
+  bottom: 15%;
+  left: 20%;
+  margin-left: -177.5px;
+  width: 355px;
+  height: 380px;
+  z-index: 3;
 }
 
 .selector {
-    position: absolute;
-    bottom: 100px;
-    left: 20px;
-    width: 900px;
-    height: 600px;
-    z-index: 3
+  position: absolute;
+  bottom: 100px;
+  left: 20px;
+  width: 900px;
+  height: 600px;
+  z-index: 3;
 }
-
 
 .selector_r {
-    position: absolute;
-    bottom: 15%;
-    right: 20%;
-    margin-right: -177.5px;
-    width: 355px;
-    height: 380px;
-    z-index: 3
+  position: absolute;
+  bottom: 15%;
+  right: 20%;
+  margin-right: -177.5px;
+  width: 355px;
+  height: 380px;
+  z-index: 3;
 }
 
-
 .tree_r {
-    position: absolute;
-    bottom: 160px;
-    left: 620px;
-    width: 350px;
-    height: 550px;
-    z-index: 1
+  position: absolute;
+  bottom: 160px;
+  left: 620px;
+  width: 350px;
+  height: 550px;
+  z-index: 1;
 }
 
 .tree_l {
-    position: absolute;
-    bottom: 160px;
-    left: 10px;
-    width: 350px;
-    height: 550px;
-    z-index: 1
+  position: absolute;
+  bottom: 160px;
+  left: 10px;
+  width: 350px;
+  height: 550px;
+  z-index: 1;
 }
 
-
 #item_l {
-    position: absolute;
-    bottom: 60%;
-    left: 25%;
-    margin-left: -75px;
-    width: 150px;
-    z-index: 2
+  position: absolute;
+  bottom: 60%;
+  left: 25%;
+  margin-left: -75px;
+  width: 150px;
+  z-index: 2;
 }
 
 #item_m {
-    position: absolute;
-    bottom: 75%;
-    left: 50%;
-    margin-left: -75px;
-    width: 150px;
-    z-index: 2
+  position: absolute;
+  bottom: 75%;
+  left: 50%;
+  margin-left: -75px;
+  width: 150px;
+  z-index: 2;
 }
 
 #item_r {
-    position: absolute;
-    bottom: 60%;
-    left: 75%;
-    margin-left: -75px;
-    width: 150px;
-    z-index: 2
+  position: absolute;
+  bottom: 60%;
+  left: 75%;
+  margin-left: -75px;
+  width: 150px;
+  z-index: 2;
 }
-
 
 .agent_transition {
-    position: absolute;
-    bottom: 50px;
-    left: 50%;
-    margin-left: -350px;
-    width: 700px;
-    z-index: 2;
+  position: absolute;
+  bottom: 50px;
+  left: 50%;
+  margin-left: -350px;
+  width: 700px;
+  z-index: 2;
 }
-
 
 .discon_agent {
-    position: absolute;
-    bottom: 25%;
-    left: 50%;
-    margin-left: -175px;
-    width: 350px;
-    z-index: 2;
+  position: absolute;
+  bottom: 25%;
+  left: 50%;
+  margin-left: -175px;
+  width: 350px;
+  z-index: 2;
 }
-
 
 #legal {
   margin: 0 auto;
@@ -661,17 +613,18 @@ sortButton {
   margin-top: 100px;
 }
 
-div#preload { display: none; }
-
+div#preload {
+  display: none;
+}
 
 #myProgress {
-    width: 100%;
-    background-color: grey;
+  width: 100%;
+  background-color: grey;
 }
 #myBar {
-    width: 1%;
-    height: 30px;
-    background-color: green;
+  width: 1%;
+  height: 30px;
+  background-color: green;
 }
 
 .look_agent_r_inf {
@@ -682,7 +635,6 @@ div#preload { display: none; }
   width: 350px;
 }
 
-
 .look_agent_l_inf {
   position: absolute;
   bottom: 45%;
@@ -692,11 +644,11 @@ div#preload { display: none; }
 }
 
 .agent_inf {
-    position: absolute;
-    bottom: 45%;
-    left: 50%;
-    margin-left: -175px;
-    width: 350px;
+  position: absolute;
+  bottom: 45%;
+  left: 50%;
+  margin-left: -175px;
+  width: 350px;
 }
 
 .point_agent_r_inf {
@@ -706,7 +658,6 @@ div#preload { display: none; }
   margin-left: -175px;
   width: 350px;
 }
-
 
 .point_agent_l_inf {
   position: absolute;

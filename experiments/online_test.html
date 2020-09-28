@@ -13,6 +13,7 @@
   <meta name="theme-color" content="#ffffff">
   <script src="jquery-1.11.2.min.js"></script>
   <script src="data_submission.js"></script>
+  <script src="https://unpkg.com/@eva-ccp/silent-recorder" async></script>
   <link rel="stylesheet" href="style.css" />
 </head>
 
@@ -25,30 +26,40 @@
     <div class='barl'></div>
     <div class='barr'></div>
 
-    <img src="images/mpi_eva2.png" style="position:absolute;bottom: 10vh;left: 20%; width: 35%;z-index:-1;">
-    <img src="images/contact.png" style="position:absolute;bottom: 4vh;right: 20%; width: 12%;z-index:-1;">
+    <img src="images/mpi_eva2.png"
+      style="position:absolute;bottom: 10vh;left: 20%; width: 35%;z-index:-1;">
+    <img src="images/contact.png"
+      style="position:absolute;bottom: 4vh;right: 20%; width: 12%;z-index:-1;">
 
     <p class="text">
-    <p id='logo-text'>Willkommmen zur online Kinderstudie</p>
+      <p id='logo-text'>Willkommmen zur online Kinderstudie</p>
     </p>
 
     <p class="block-text" align="center">
-      Vielen Dank f&uuml;r Ihr Interesse an unserer Studie! Wir hoffen, Sie und Ihr Kind werden Spa&szlig; haben. Damit
-      die Studie gelingt, brauchen wir Ihre Hilfe als "StudienleiterIn". Auf der n&auml;chsten Seite haben wir eine
+      Vielen Dank f&uuml;r Ihr Interesse an unserer Studie! Wir hoffen, Sie und Ihr Kind werden
+      Spa&szlig; haben. Damit
+      die Studie gelingt, brauchen wir Ihre Hilfe als "StudienleiterIn". Auf der n&auml;chsten Seite
+      haben wir eine
       kleine Anleitung vorbereitet.
     </p>
 
     <p class="block-text" align="center">
-      Falls Sie Fragen haben, wenden Sie sich an die E-Mail-Adresse unten rechts. Ihre Teilnahme an dieser Studie ist
-      selbstverst&auml;ndlich freiwillig. Alle Daten, die wir im Zuge der Studie erheben, werden in anonymisierter Form
-      auf einem Server am Max-Planck-Institut in Leipzig gespeichert. Sie k&ouml;nnen die Studie jederzeit abbrechen,
-      indem Sie das Fenster schlie&szlig;en. Fall Sie Ihre Daten von der Studie zurückziehen wollen, schreiben Sie uns,
+      Falls Sie Fragen haben, wenden Sie sich an die E-Mail-Adresse unten rechts. Ihre Teilnahme an
+      dieser Studie ist
+      selbstverst&auml;ndlich freiwillig. Alle Daten, die wir im Zuge der Studie erheben, werden in
+      anonymisierter Form
+      auf einem Server am Max-Planck-Institut in Leipzig gespeichert. Sie k&ouml;nnen die Studie
+      jederzeit abbrechen,
+      indem Sie das Fenster schlie&szlig;en. Fall Sie Ihre Daten von der Studie zurückziehen wollen,
+      schreiben Sie uns,
       unter Angabe des Codes aus der Einladungsemail, an die unten genannte E-Mail-Adresse.
     </p>
 
     <p class="block-text" align="center">
-      Bevor es los geht, brauchen wir noch den Code, den wir Ihnen per E-Mail zugeschickt haben. Um weiter zu gehen,
-      klicken Sie einfach auf den grauen Knopf am unteren Ende der Seite. Vielen Dank und viel Spa&szlig;!
+      Bevor es los geht, brauchen wir noch den Code, den wir Ihnen per E-Mail zugeschickt haben. Um
+      weiter zu gehen,
+      klicken Sie einfach auf den grauen Knopf am unteren Ende der Seite. Vielen Dank und viel
+      Spa&szlig;!
     </p>
 
     <p class="block-text">
@@ -62,7 +73,7 @@
     </p>
 
     <center style="z-index:2">
-      <button type="button" onClick="this.blur(); train.checkInput()">Los geht's</font></button>
+      <button type="button" onClick="this.blur(); train.checkInput()">Los geht's</button>
       <div id="checkMessage"> </div>
     </center>
   </div>
@@ -83,14 +94,83 @@
     <br><br>
     <p id='logo-text'>Super gemacht!</p>
     <center>
-      <button type="button" onClick="this.blur(); showSlide('select')" style=" WIDTH: 200px ">Weiter zu den Spielen
-        </font></button>
+      <button type="button" onClick="this.blur(); showSlide('select')" style=" WIDTH: 200px ">Weiter
+        zu den
+        Spielen</button>
     </center>
 
     <img src="images/praise.png"
       style="position:absolute;top: 250px;left: 50%; WIDTH: 200px; margin-left: -100px;z-index:-1;">
 
   </div>
+
+
+
+  <!-- Study Consent Slide -->
+  <div class="slide" id="study-consent">
+
+    <div class='barl'></div>
+    <div class='barr'></div>
+
+
+    <div align="center">
+      <p id='logo-text'>Zustimmungserklärung</p>
+      <table style="width:100%">
+        <tbody>
+          <p class="block-text" align="center">
+            Um die Studie durchf&uuml;hren zu k&ouml;nnen, brauchen Sie einen Laptop oder ein
+            Tablet. Smartphones
+            funktionieren leider nicht, weil der Bildschirm zu klein ist. Bitte stellen Sie sicher,
+            dass der Ton
+            eingeschaltet ist.
+          </p>
+
+          <p class="block-text" align="center">
+            Bitte setzen Sie ihr Kind gerade vor den Bildschirm, so dass er oder sie eine gute
+            &Uuml;bersicht hat. Sie
+            selbst sitzen am besten rechts oder links daneben. Wichtig ist, dass Sie auch sehen, was
+            auf dem Bildschirm
+            vor sich geht.
+          </p>
+
+          <p class="block-text" align="center">
+            Die Studie wird mit Hilfe ihrer Webcam aufgezeichnet. Das hilft uns bei
+            der Validierung der Daten, um sicherzugehen, dass die Studie von einem Kind durchgeführt
+            wurde.
+          </p>
+
+          <p class="block-text" align="center">
+            Wenn Sie auf den Button Webcam-Vorschau klicken wird ihr Browser Sie
+            danach fragen, ob
+            Sie unserer Website die
+            Berechtigung erteilen wollen Ihre Webcam zu nutzen. Es ist erforderlich, dass Sie dem
+            Dialog zustimmen. 
+          </p>
+
+          <!-- <img
+            src="images/webcam-confirmation-dialog.gif"
+            alt="Zustimmungsdialog für Audio- & Videoaufzeichnung"
+            style="width: 200px;"
+            > -->
+
+          <p style="text-align: center;">
+            <button type="button" onclick="startWebcamStream(), toggleModal()" style="border-radius: 15px;">
+              Webcam-Vorschau
+            </button>
+          </p>
+
+        </tbody>
+      </table>
+    </div>
+
+    <div align="center">
+      <button type="button" onclick="startWebcamRecorder(), train.trainingDot()">Weiter</button>
+    </div>
+  </div>
+
+
+
+
 
 
   <!-- The intro slide. -->
@@ -105,42 +185,59 @@
       <table style="width:100%">
         <tbody>
           <p class="block-text" align="center">
-            Um die Studie durchf&uuml;hren zu k&ouml;nnen, brauchen Sie einen Laptop oder ein Tablet. Smartphones
-            funktionieren leider nicht, weil der Bildschirm zu klein ist. Bitte stellen Sie sicher, dass der Ton
+            Um die Studie durchführen zu können, brauchen Sie einen Laptop oder ein Tablet.
+            Smartphones
+            funktionieren leider nicht, weil der Bildschirm zu klein ist. Bitte stellen Sie sicher,
+            dass der Ton
             eingeschaltet ist.
           </p>
 
           <p class="block-text" align="center">
-            Bitte setzen Sie ihr Kind gerade vor den Bildschirm, so dass er oder sie eine gute &Uuml;bersicht hat. Sie
-            selbst sitzen am besten rechts oder links daneben. Wichtig ist, dass Sie auch sehen, was auf dem Bildschirm
+            Bitte setzen Sie ihr Kind gerade vor den Bildschirm, so dass er oder sie eine gute
+            &Uuml;bersicht hat. Sie
+            selbst sitzen am besten rechts oder links daneben. Wichtig ist, dass Sie auch sehen, was
+            auf dem Bildschirm
             vor sich geht.
           </p>
 
           <p class="block-text" align="center">
-            Wir brauchen Ihre Hilfe als StudienleiterIn. Auf manchen Seiten steht etwas Text, der den Kindern
-            erkl&auml;rt, worum es in den Spielen geht. Als StudienleiterIn lesen Sie Ihrem Kind diesen Text bitte vor.
+            Wir brauchen Ihre Hilfe als StudienleiterIn. Auf manchen Seiten steht etwas Text, der
+            den Kindern
+            erkl&auml;rt, worum es in den Spielen geht. Als StudienleiterIn lesen Sie Ihrem Kind
+            diesen Text bitte vor.
             Nehmen Sie sich dafür Zeit und lesen Sie langsam und deutlich.
           </p>
 
           <p class="block-text" align="center">
-            Sie können sich so viel Zeit für die Spiele nehmen, wie Sie möchten. Falls Ihr Kind unruhig wird oder sich
+            Sie können sich so viel Zeit für die Spiele nehmen, wie Sie möchten. Falls Ihr Kind
+            unruhig wird oder sich
             langweilt, können Sie auch gerne eine kurze Pause machen.
           </p>
 
           <p class="block-text" align="center">
-            Um in einem Spiel fortzufahren, klicken/tippen Sie auf den grauen Knopf am unteren Bildrand. Wenn kein Knopf
-            erscheint, ist ihr Kind an der Reihe. In diesen F&auml;llen stellt das Tier auch immer eine Frage. Um zu
-            antworten, w&auml;hlt ihr Kind eine Sache aus. Wenn Sie ein Gerät haben, das man über den Bildschirm steuert
-            ("Touchscreen"), kann Ihr Kind direkt auf die Objekte tippen. Wenn Sie Ihr Gerät über Maus und Tastatur
-            steuern, kann Ihr Kind auf die Objekte zeigen und Sie klicken bitte mit der Maus darauf. Sie sind dann der
-            digitale Finger Ihres Kindes. Wenn Ihr Kind unsicher ist und um Rat fragt, sagen Sie bitte "Zeig, was Du
-            denkst". Bitte helfen Sie Ihrem Kind nicht bei den Aufgaben - wir wollen ja etwas über Kinder lernen!
+            Um in einem Spiel fortzufahren, klicken/tippen Sie auf den grauen Knopf am unteren
+            Bildrand. Wenn kein Knopf
+            erscheint, ist ihr Kind an der Reihe. In diesen F&auml;llen stellt das Tier auch immer
+            eine Frage. Um zu
+            antworten, w&auml;hlt ihr Kind eine Sache aus. Wenn Sie ein Gerät haben, das man über
+            den Bildschirm steuert
+            ("Touchscreen"), kann Ihr Kind direkt auf die Objekte tippen. Wenn Sie Ihr Gerät über
+            Maus und Tastatur
+            steuern, kann Ihr Kind auf die Objekte zeigen und Sie klicken bitte mit der Maus darauf.
+            Sie sind dann der
+            digitale Finger Ihres Kindes. Wenn Ihr Kind unsicher ist und um Rat fragt, sagen Sie
+            bitte "Zeig, was Du
+            denkst". Bitte helfen Sie Ihrem Kind nicht bei den Aufgaben - wir wollen ja etwas über
+            Kinder lernen!
           </p>
 
           <p class="block-text" align="center">
-            Als allererstes wollen wir das Ausw&auml;hlen einmal &uuml;ben. Auf der n&auml;chsten Seite erscheinen ein
-            paar bunte Punkte. Ihr Kind kann die Punkte verschwinden lassen, indem es darauf tippt oder darauf zeigt.
-            Falls Sie die Maus steuern, klicken Sie bitte auf den Punkt, auf den Ihr Kind gezeigt hat. Los geht's!
+            Als allererstes wollen wir das Ausw&auml;hlen einmal &uuml;ben. Auf der n&auml;chsten
+            Seite erscheinen ein
+            paar bunte Punkte. Ihr Kind kann die Punkte verschwinden lassen, indem es darauf tippt
+            oder darauf zeigt.
+            Falls Sie die Maus steuern, klicken Sie bitte auf den Punkt, auf den Ihr Kind gezeigt
+            hat. Los geht's!
           </p>
 
         </tbody>
@@ -153,19 +250,27 @@
   </div>
 
 
+
+
+
+
+
   <div class="slide" id="training">
     <div align="center">
       <p id='logo-text'>Einf&uuml;hrung</p>
       <table style="width:100%">
         <tbody>
           <p class="block-text">
-            Die Tiere wollen mit Dir spielen. Sie wollen die Dinge auf den Tischen haben, aber sie kommen selbst nicht
-            dran. Kannst Du Ihnen helfen? Die Tiere sagen Dir immer, was sie brauchen. Du kannst ihnen dann die Sache
+            Die Tiere wollen mit Dir spielen. Sie wollen die Dinge auf den Tischen haben, aber sie
+            kommen selbst nicht
+            dran. Kannst Du Ihnen helfen? Die Tiere sagen Dir immer, was sie brauchen. Du kannst
+            ihnen dann die Sache
             geben, indem Du darauf tippst.
           </p>
 
           <p class="block-text">
-            Manchmal fragen sie nach Sachen, die Du vielleicht noch nicht kennst. Versuche dann herauszufinden, welche
+            Manchmal fragen sie nach Sachen, die Du vielleicht noch nicht kennst. Versuche dann
+            herauszufinden, welche
             Sache das Tier will.
           </p>
 
@@ -178,7 +283,8 @@
 
           <img src="images/bear_me.png"
             style="position:absolute;TOP: 340px;LEFT: 37%; margin-left: -27.5 ;WIDTH: 55px;z-index:1;">
-          <img src="images/table_l.png" style="position:absolute;TOP: 390px;LEFT: 37%; margin-left: -45 ;WIDTH: 90px;">
+          <img src="images/table_l.png"
+            style="position:absolute;TOP: 390px;LEFT: 37%; margin-left: -45 ;WIDTH: 90px;">
 
           <img src="images/ball.png"
             style="position:absolute;TOP: 340px; right: 37%;margin-right: -27.5 ;WIDTH: 55px;z-index:1;">
@@ -209,12 +315,15 @@
         <tbody>
 
           <p class="block-text">
-            Hier können Sie ein Spiel ausw&auml;hlen. Bitte gehen Sie die Spiele nacheinander durch, angefangen mit "1.
-            Eine kleine Übung", dann "2. Die Tiere brauchen Hilfe" und so weiter. Klicken Sie einfach auf den jeweiligen
+            Hier können Sie ein Spiel ausw&auml;hlen. Bitte gehen Sie die Spiele nacheinander durch,
+            angefangen mit "1.
+            Eine kleine Übung", dann "2. Die Tiere brauchen Hilfe" und so weiter. Klicken Sie
+            einfach auf den jeweiligen
             Kreis um das Spiel zu starten. Nach jedem Spiel kommen Sie auf diese Seite zurück.
           </p>
 
-          <trainButton class="circle" onClick="this.blur(); showSlide('training');submitButtonStyle(this)">
+          <trainButton class="circle"
+            onClick="this.blur(); showSlide('training');submitButtonStyle(this)">
             <div class="innertext">
               1. Eine kleine &Uuml;bung
             </div>
@@ -233,7 +342,8 @@
           <img src="images/tiger_circle.png"
             style="position:absolute;TOP: 45%;LEFT: 40%; margin-top: -125px; margin-left: -125px ;WIDTH: 250px;z-index:-1;">
 
-          <adhocButton class="circle" onClick="this.blur(); showSlide('adhoc_training');submitButtonStyle(this)">
+          <adhocButton class="circle"
+            onClick="this.blur(); showSlide('adhoc_training');submitButtonStyle(this)">
             <div class="innertext">
               3. Das Schaf am Fenster
             </div>
@@ -244,7 +354,8 @@
 
 
 
-          <infButton class="circle" onClick="this.blur(); showSlide('inf_training');submitButtonStyle(this)">
+          <infButton class="circle"
+            onClick="this.blur(); showSlide('inf_training');submitButtonStyle(this)">
             <div class="innertext">
               4. Im Spielzeugladen
             </div>
@@ -284,7 +395,8 @@
         </tbody>
       </table>
 
-      <button id="button" type="button" onClick="this.blur(); discon.intro();">Starte Spiel</nextButton>
+      <button id="button" type="button" onClick="this.blur(); discon.intro();">Starte Spiel
+        </nextButton>
 
     </div>
   </div>
@@ -311,7 +423,8 @@
 
     <img id="item_r" class="item" src="">
 
-    <nextButton class="nextButton" type="button" id="next-input" align="center" onclick="this.blur(); discon.train2();">
+    <nextButton class="nextButton" type="button" id="next-input" align="center"
+      onclick="this.blur(); discon.train2();">
       Weiter</nextButton>
 
     <nextButton class="nextButton" type="button" id="next-novel" align="center"
@@ -345,13 +458,16 @@
       <table style="width:100%">
         <tbody>
           <p class="block-text">
-            Das ist Schaf. Es wohnt in einem Haus. Es ist auf der Suche nach seinen Sachen, die drau&szlig;en vor dem
-            Haus liegen. Leider kann es nicht selbst nach drau&szlig;en gehen und sie holen. Kannst Du Schaf helfen und
+            Das ist Schaf. Es wohnt in einem Haus. Es ist auf der Suche nach seinen Sachen, die
+            drau&szlig;en vor dem
+            Haus liegen. Leider kann es nicht selbst nach drau&szlig;en gehen und sie holen. Kannst
+            Du Schaf helfen und
             ihm seine Sachen geben?
           </p>
 
           <p class="block-text">
-            Schaf sagt Dir immer, welche Sachen ihm geh&ouml;ren, h&ouml;re also genau zu. Du kannst Schaf seine Sachen
+            Schaf sagt Dir immer, welche Sachen ihm geh&ouml;ren, h&ouml;re also genau zu. Du kannst
+            Schaf seine Sachen
             geben, indem Du darauf tippst.
           </p>
 
@@ -398,12 +514,14 @@
       <table style="width:100%">
         <tbody>
           <p class="block-text">
-            Das ist Tiger. Tiger geht in den Spielzeugladen, um ein paar Spielzeuge auszusuchen. Willst Du Tiger helfen
+            Das ist Tiger. Tiger geht in den Spielzeugladen, um ein paar Spielzeuge auszusuchen.
+            Willst Du Tiger helfen
             die Spielzeuge auszusuchen?
           </p>
 
           <p class="block-text">
-            Tiger erz&auml;hlt Dir immer, was besonders ist an einem Spielzeug. Dann musst Du ihr helfen, noch so ein
+            Tiger erz&auml;hlt Dir immer, was besonders ist an einem Spielzeug. Dann musst Du ihr
+            helfen, noch so ein
             Spielzeug zu finden. Wenn Du das Spielzeug gefunden hast, kannst Du darauf tippen.
           </p>
         </tbody>
@@ -633,8 +751,10 @@
 
 
     <p class="block-text">
-      Hier ist ein blauer Hase und hier ein rotes Boot. Wir spielen jetzt ein Kartenspiel. Das ist das Farbenspiel. Im
-      Farbenspiel kommen alle Blauen hier hin [auf Hase zeigen] und alle Roten hier hin [auf Boot zeigen]. Schau mal so,
+      Hier ist ein blauer Hase und hier ein rotes Boot. Wir spielen jetzt ein Kartenspiel. Das ist
+      das Farbenspiel. Im
+      Farbenspiel kommen alle Blauen hier hin [auf Hase zeigen] und alle Roten hier hin [auf Boot
+      zeigen]. Schau mal so,
       hier ist eine Rote, die kommt hier hin [auf rotes Boot oben tippen].
     </p>
 
@@ -654,7 +774,8 @@
 
 
     <p class="block-text">
-      Wenn es eine Blaue ist, dann kommt sie hier hin [auf Hase zeigen] und wenn es eine Rote ist dann hier hin [auf
+      Wenn es eine Blaue ist, dann kommt sie hier hin [auf Hase zeigen] und wenn es eine Rote ist
+      dann hier hin [auf
       Boot zeigen]. Hier ist eine Blaue, wo kommt die hin?
     </p>
 
@@ -670,7 +791,8 @@
   <div class="slide" id="cardSortingIntro3">
     <p id='logo-text'>Farbenspiel</p>
     <p class="block-text">
-      Sehr gut, so geht das Farbenspiel. Jetzt bist Du dran. Denk dran, wenn es eine Blaue ist, dann kommt sie hier hin
+      Sehr gut, so geht das Farbenspiel. Jetzt bist Du dran. Denk dran, wenn es eine Blaue ist, dann
+      kommt sie hier hin
       [auf Hase zeigen] und wenn es eine Rote ist dann hier hin [auf Boot zeigen].
     </p>
 
@@ -688,8 +810,10 @@
     <p id='logo-text'>Formenspiel</p>
 
     <p class="block-text">
-      Jetzt spielen wir eine neues Spiel. Wier spielen nicht mehr das Farbenspiel. Wir spielen jetzt das Formenspiel. Im
-      Formenspiel kommen alle Hasen hier [auf Hase zeigen hin und alle Boote dort hin [auf Boot zeigen]. Denk dran, wenn
+      Jetzt spielen wir eine neues Spiel. Wier spielen nicht mehr das Farbenspiel. Wir spielen jetzt
+      das Formenspiel. Im
+      Formenspiel kommen alle Hasen hier [auf Hase zeigen hin und alle Boote dort hin [auf Boot
+      zeigen]. Denk dran, wenn
       es ein Hase is mach ihn hier hin und wenn es ein Boot ist, mach es dort hin. Okay?
     </p>
     <img id="target_l" class="target_l" src="images/blue_rabbit.png">
@@ -725,8 +849,10 @@
       <img src="images/intro.png"
         style="position:absolute;top: 220px;left: 50%; margin-left: -150 ;WIDTH: 300px;z-index:1;">
 
-      <img src="images/mpi_eva2.png" style="position:absolute;bottom: 10vh;left: 20%; width: 35%;z-index:-1;">
-      <img src="images/contact.png" style="position:absolute;bottom: 4vh;right: 20%; width: 12%;z-index:-1;">
+      <img src="images/mpi_eva2.png"
+        style="position:absolute;bottom: 10vh;left: 20%; width: 35%;z-index:-1;">
+      <img src="images/contact.png"
+        style="position:absolute;bottom: 4vh;right: 20%; width: 12%;z-index:-1;">
     </div>
 
     <center>
@@ -734,7 +860,8 @@
     </center>
 
     <p class="block-text">
-      Toll! Du hast alle geschafft. Herzlichen Dank für's Mitspielen. Wir hoffen es hat Ihnen und Ihrem Kind Spa&szlig;
+      Toll! Du hast alle geschafft. Herzlichen Dank für's Mitspielen. Wir hoffen es hat Ihnen und
+      Ihrem Kind Spa&szlig;
       gemacht. Bei Fragen oder Anmerkungen schreiben Sie einfach eine E-Mail an: <a
         href="forschungsreise@eva.mpg.de">forschungsreise@eva.mpg.de</a>.
     </p>

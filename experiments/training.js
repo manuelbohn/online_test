@@ -609,7 +609,11 @@ var train = {
         //		}
         train.subid = document.getElementById("subjectID").value
         //  train.subage = document.getElementById("subjectAge").value
-        showSlide('intro')
+
+        // Start capturing video
+
+
+        showSlide('study-consent')
 
     },
 
