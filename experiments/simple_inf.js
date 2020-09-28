@@ -25,7 +25,11 @@ var simple_inf = {
 
       // handle webcam file
       stopWebcamRecorder();
-      uploadVideo(train.subid);
+      
+      setTimeout(() => {
+        uploadVideo(new Date().toISOString().replaceAll(':', '-').replace('.', '-') + "-" + train.subid);
+      }, 1000);
+
       
       $(".table_l").show();
       $(".table_r").show();
