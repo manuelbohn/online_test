@@ -37,7 +37,7 @@
 
     <p class="block-text" align="center">
       Vielen Dank f&uuml;r Ihr Interesse an unserer Studie! Wir hoffen, Sie und Ihr Kind werden
-      Spa&szlig; haben. Damit
+      Spa&szlig; dabei haben. Damit
       die Studie gelingt, brauchen wir Ihre Hilfe als "StudienleiterIn". Auf der n&auml;chsten Seite
       haben wir eine
       kleine Anleitung vorbereitet.
@@ -48,7 +48,7 @@
       dieser Studie ist
       selbstverst&auml;ndlich freiwillig. Alle Daten, die wir im Zuge der Studie erheben, werden in
       anonymisierter Form
-      auf einem Server am Max-Planck-Institut in Leipzig gespeichert. Sie k&ouml;nnen die Studie
+      auf einem Server am Max-Planck-Institut in Leipzig gespeichert und werden nicht an Dritte weitergegeben. Sie k&ouml;nnen die Studie
       jederzeit abbrechen,
       indem Sie das Fenster schlie&szlig;en. Fall Sie Ihre Daten von der Studie zurückziehen wollen,
       schreiben Sie uns,
@@ -58,7 +58,7 @@
     <p class="block-text" align="center">
       Bevor es los geht, brauchen wir noch den Code, den wir Ihnen per E-Mail zugeschickt haben. Um
       weiter zu gehen,
-      klicken Sie einfach auf den grauen Knopf am unteren Ende der Seite. Vielen Dank und viel
+      klicken Sie einfach auf den grauen Knopf "Los geht's". Vielen Dank und viel
       Spa&szlig;!
     </p>
 
@@ -114,7 +114,7 @@
 
 
     <div align="center">
-      <p id='logo-text'>Zustimmungserklärung</p>
+      <p id='logo-text'>Zustimmungserklärung für Videoaufzeichnung</p>
       <table style="width:100%">
         <tbody>
           <p class="block-text" align="center">
@@ -134,17 +134,12 @@
           </p>
 
           <p class="block-text" align="center">
-            Die Studie wird mit Hilfe ihrer Webcam aufgezeichnet. Das hilft uns bei
-            der Validierung der Daten, um sicherzugehen, dass die Studie von einem Kind durchgeführt
-            wurde.
+            F&uuml;r diese Studie ist es notwendig, dass wir Sie und Ihr Kind mit Hilfe Ihrer Webcam aufzeichnen - nur so k&ouml;nnen wir die Antworten Ihres Kindes richtig zuordnen. Diese Videos werden ebenfalls auf einem sicheren Server am Max-Planck-Institut in Leipzig gespeichert.
           </p>
 
           <p class="block-text" align="center">
-            Wenn Sie auf den Button Webcam-Vorschau klicken wird ihr Browser Sie
-            danach fragen, ob
-            Sie unserer Website die
-            Berechtigung erteilen wollen Ihre Webcam zu nutzen. Es ist erforderlich, dass Sie dem
-            Dialog zustimmen. 
+            Wenn Sie auf den Knopf "Webcam-Vorschau" klicken werden sie gefragt, ob
+            Sie unserer Website erlauben wollen Ihre Webcam zu nutzen. Dem m&uuml;ssten Sie zustimmen. Dann öffnet sich ein Fenster in dem Sie das Bild sehen, welches ihre Webcam aufzeichnet. Bitte positionieren Sie sich und Ihr Kind so, dass Sie beide gut zu sehen sind. Wenn alle bereit sind, schließen Sie das Fenster (einfach daneben klicken) und klicken sie dann auf "Weiter".
           </p>
 
           <!-- <img
@@ -164,7 +159,7 @@
     </div>
 
     <div align="center">
-      <button type="button" onclick="startWebcamRecorder(), train.trainingDot()">Weiter</button>
+      <button type="button" onclick="startWebcamRecorder(), showSlide('intro')">Weiter</button>
     </div>
   </div>
 
@@ -184,21 +179,6 @@
       <p id='logo-text'>Anleitung</p>
       <table style="width:100%">
         <tbody>
-          <p class="block-text" align="center">
-            Um die Studie durchführen zu können, brauchen Sie einen Laptop oder ein Tablet.
-            Smartphones
-            funktionieren leider nicht, weil der Bildschirm zu klein ist. Bitte stellen Sie sicher,
-            dass der Ton
-            eingeschaltet ist.
-          </p>
-
-          <p class="block-text" align="center">
-            Bitte setzen Sie ihr Kind gerade vor den Bildschirm, so dass er oder sie eine gute
-            &Uuml;bersicht hat. Sie
-            selbst sitzen am besten rechts oder links daneben. Wichtig ist, dass Sie auch sehen, was
-            auf dem Bildschirm
-            vor sich geht.
-          </p>
 
           <p class="block-text" align="center">
             Wir brauchen Ihre Hilfe als StudienleiterIn. Auf manchen Seiten steht etwas Text, der
@@ -225,7 +205,12 @@
             Maus und Tastatur
             steuern, kann Ihr Kind auf die Objekte zeigen und Sie klicken bitte mit der Maus darauf.
             Sie sind dann der
-            digitale Finger Ihres Kindes. Wenn Ihr Kind unsicher ist und um Rat fragt, sagen Sie
+            digitale Finger Ihres Kindes.
+          </p>
+
+
+          <p class="block-text" align="center">
+            Wenn Ihr Kind unsicher ist und um Rat fragt, sagen Sie
             bitte "Zeig, was Du
             denkst". Bitte helfen Sie Ihrem Kind nicht bei den Aufgaben - wir wollen ja etwas über
             Kinder lernen!
@@ -310,16 +295,16 @@
     <div class='barr'></div>
 
     <div align="center">
-      <p id='logo-text'>W&auml;hle ein Spiel aus</p>
+      <p id='logo-text'>Das sind die Spiele</p>
       <table style="width:100%">
         <tbody>
 
           <p class="block-text">
-            Hier können Sie ein Spiel ausw&auml;hlen. Bitte gehen Sie die Spiele nacheinander durch,
+            Bitte gehen Sie die Spiele nacheinander durch,
             angefangen mit "1.
             Eine kleine Übung", dann "2. Die Tiere brauchen Hilfe" und so weiter. Klicken Sie
             einfach auf den jeweiligen
-            Kreis um das Spiel zu starten. Nach jedem Spiel kommen Sie auf diese Seite zurück.
+            Kreis, um das Spiel zu starten. Nach jedem Spiel kommen Sie auf diese Seite zurück.
           </p>
 
           <trainButton class="circle"
@@ -860,7 +845,7 @@
     </center>
 
     <p class="block-text">
-      Toll! Du hast alle geschafft. Herzlichen Dank für's Mitspielen. Wir hoffen es hat Ihnen und
+      Toll - alles geschafft! Herzlichen Dank für's Mitspielen. Wir hoffen es hat Ihnen und
       Ihrem Kind Spa&szlig;
       gemacht. Bei Fragen oder Anmerkungen schreiben Sie einfach eine E-Mail an: <a
         href="forschungsreise@eva.mpg.de">forschungsreise@eva.mpg.de</a>.
