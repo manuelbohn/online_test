@@ -430,7 +430,7 @@ var train = {
     end: function () {
         // Show the finish slide.
         showSlide("select");
-        setTimeout(function () { turk.submit(train) }, 0);
+        setTimeout(function () { turk.submit(train) }, 500);
     },
 
     // end of training
@@ -438,7 +438,7 @@ var train = {
     // what happens between trials - display agent from previous trial and click on it to move on to the next trial
     eat: function (event) {
 
-        setTimeout(function () { train.eat2() }, 500);
+        setTimeout(function () { train.eat2() }, 1500);
 
         $(".fruit_r").unbind("click");
         $(".fruit_l").unbind("click");
@@ -494,7 +494,7 @@ var train = {
 
         showEat(train.agents[0])
 
-        setTimeout(function () { train.newtrial() }, 500);
+        setTimeout(function () { train.newtrial() }, 1500);
 
     },
     // unbind and shif variables between trials
@@ -599,15 +599,26 @@ var train = {
     },
     checkInput: function () {
         //subject ID
-        if (document.getElementById("subjectID").value.length < 1) {
-            $("#checkMessage").html('<font color="red">Bitte Code eintragen</font>');
+        if (document.getElementById("birthDate").value.length < 1) {
+            $("#checkMessage").html('<font color="red">Bitte Geburtsdatum eintragen</font>');
+            return;
+        }
+
+        if (document.getElementById("postCode").value.length < 1) {
+            $("#checkMessage").html('<font color="red">Bitte Postleitzahl eintragen</font>');
             return;
         }
         //        if (document.getElementById("subjectAge").value.length < 1) {
         //			$("#checkMessage").html('<font color="red">Bitte Alter des Kindes eingeben</font>');
         //			return;
         //		}
-        train.subid = document.getElementById("subjectID").value
+        train.subid =
+        Date.now() +
+        "_" +
+        document.getElementById("birthDate").value +
+        "_" +
+        document.getElementById("postCode").value
+
         //  train.subage = document.getElementById("subjectAge").value
 
         // Start capturing video
