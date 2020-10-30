@@ -24,11 +24,24 @@ var simple_inf = {
       showSlide("finished");
 
       // handle webcam file
-      stopWebcamRecorder();
-      
+      stopRecorder();
+
+      // show upload spinner
+      modalContent(`<img src='images/spinner-upload.svg' width='800px';>`, `#E1B4B4`)
+
       setTimeout(() => {
-        uploadVideo(new Date().toISOString().replaceAll(':', '-').replace('.', '-') + "-" + train.subid);
+        uploadVideo(
+          {
+            fname: new Date().toISOString().replaceAll(':', '-').replace('.', '-') + "-" + train.subid,
+            uploadContent: `<img src='images/spinner-upload.svg' width='800px';>`,
+            uploadColor: `#E1B4B4`,
+            successContent: `<img src='images/spinner-done.svg' width='800px';>`,
+            successColor: `#D3F9D3`
+          }
+        );
       }, 1000);
+      
+
 
       
       $(".table_l").show();

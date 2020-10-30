@@ -119,35 +119,17 @@ const injectShell = () => {
 
 injectShell();
 
-// handle older browsers that might implement getUserMedia in some way
-if (navigator.mediaDevices === undefined) {
-  navigator.mediaDevices = {};
-  navigator.mediaDevices.getUserMedia = (
-    constraintObject = { audio: true, video: { facingMode: 'user' } },
-  ) => {
-    const getUserMedia = navigator.webkitGetUserMedia || navigator.mozGetUserMedia;
-    if (!getUserMedia) {
-      return Promise.reject(
-        new Error('getUserMedia is not implemented in this browser'),
-      );
-    }
-    return new Promise((resolve, reject) => {
-      getUserMedia.call(navigator, constraintObject, resolve, reject);
+// logs all Audio/Video IO connections:
+navigator.mediaDevices
+  .enumerateDevices()
+  .then((devices) => {
+    devices.forEach((device) => {
+      console.log(device.kind.toUpperCase(), device.label); // , device.deviceId
     });
-  };
-} else {
-  // this logs all Audio/Video IO connections:
-  navigator.mediaDevices
-    .enumerateDevices()
-    .then((devices) => {
-      devices.forEach((device) => {
-        console.log(device.kind.toUpperCase(), device.label); // , device.deviceId
-      });
-    })
-    .catch((err) => {
-      console.log(err.name, err.message);
-    });
-}
+  })
+  .catch((err) => {
+    console.log(err.name, err.message);
+  });
 
 // UTILITY FUNCTIONS
 const toggleModal = () => {
@@ -190,7 +172,7 @@ const modalContent = (htmlContent, backgroundColor = 'white') => {
   window.location.href = '#greeting-modal';
 };
 
-const startStream = (constraintObject = { audio: true, video: { facingMode: 'user' } }) => {
+const startStream = (constraintObject = { audio: true, video: { facingMode: 'user', frameRate: 15 } }) => {
   if (!document.getElementById('greeting-modal')) {
     injectShell();
   }
@@ -219,15 +201,28 @@ const stopStream = () => {
   }
 };
 
-const startRecorder = (constraintObject = { audio: true, video: { facingMode: 'user' } }) => {
+const startRecorder = (constraintObject = { audio: true, video: { facingMode: 'user' }, frameRate: 15 }) => {
   // check if there is an active stream, if not start one
   if (!('localStream' in window && window.localStream.active)) {
     startStream(constraintObject);
   }
   // todo use a promise here instead of timeout
   setTimeout(() => {
+    let options = { mimeType: 'video/webm;codecs=vp9,opus' };
+    if (!MediaRecorder.isTypeSupported(options.mimeType)) {
+      console.error(`${options.mimeType} is not supported`);
+      options = { mimeType: 'video/webm;codecs=vp8,opus' };
+      if (!MediaRecorder.isTypeSupported(options.mimeType)) {
+        console.error(`${options.mimeType} is not supported`);
+        options = { mimeType: 'video/webm' };
+        if (!MediaRecorder.isTypeSupported(options.mimeType)) {
+          console.error(`${options.mimeType} is not supported`);
+          options = { mimeType: '' };
+        }
+      }
+    }
     // recrod stream
-    window.mediaRecorder = new MediaRecorder(window.localStream);
+    window.mediaRecorder = new MediaRecorder(window.localStream, options);
     window.dataChunks = [];
     window.mediaRecorder.start();
     console.log(window.mediaRecorder.state);
@@ -240,7 +235,7 @@ const stopRecorder = () => {
     window.mediaRecorder.stop();
     console.log(window.mediaRecorder.state);
     window.mediaRecorder.onstop = () => {
-      window.blob = new Blob(window.dataChunks, { type: 'video/mp4;' });
+      window.blob = new Blob(window.dataChunks, { type: 'video/webm' });
       // reset dataChunks (for consecutive videos)
       window.dataChunks = [];
       const videoURL = window.URL.createObjectURL(window.blob);
@@ -289,9 +284,9 @@ const uploadVideo = (modalObj) => {
     formData.append('vidfile', window.blob, modalObject.fname);
     // post the file using fetch
     fetch(endpoint, {
-      method: 'post',
+      method: 'POST',
       body: formData, // formData
-    })
+    }).then()
       .then(() => {
         // release closing lock
         window.onbeforeunload = null;
@@ -300,6 +295,16 @@ const uploadVideo = (modalObj) => {
       .catch(console.error);
   } else {
     // if no blob is in window show warning:
-    modalContent('No recording was found 😔', 'PeachPuff');
+    modalContent('<h1>No recording was found 😔</h1>', 'PeachPuff');
   }
+};
+
+module.exports = {
+  injectShell,
+  toggleModal,
+  startStream,
+  stopStream,
+  startRecorder,
+  stopRecorder,
+  uploadVideo,
 };
