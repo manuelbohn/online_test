@@ -28,7 +28,7 @@ var me = {
 // what happens between trials - display agent from previous trial and click on it to move on to the next trial
    eat: function(event) {
 
-    setTimeout(function() {me.eat2() }, 1500);
+    setTimeout(function() {me.eat2() }, 500);
 
     showSlide("choice");
 
@@ -95,7 +95,7 @@ eat2: function(event) {
 
     showEat(me.agents[0])
 
-		setTimeout(function() {me.newtrial() }, 1500);
+		setTimeout(function() {me.newtrial() }, 500);
 
 },
 
