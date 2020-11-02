@@ -7,3 +7,7 @@ id_rsa.ppk
 id_rsa.pub
 
 .DS_Store
+
+video/*
+
+data/*

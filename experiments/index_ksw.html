@@ -26,7 +26,7 @@
     <div class='barl'></div>
     <div class='barr'></div>
 
-    <img src="images/ccp_logo.png" style="position:absolute; top: 70%;left: 20%; WIDTH: 40%;z-index:-1;" >
+    <img src="images/ccp_logo.png" style="position:absolute;top: 520px;left: 20%; WIDTH: 40%;z-index:-1;" >
 
     <p class="text">
       <p id='logo-text'>Willkommmen zur online Kinderstudie</p>
@@ -49,15 +49,13 @@
       jederzeit abbrechen,
       indem Sie das Fenster schlie&szlig;en. Falls Sie Ihre Daten zu einem späteren Zeitpunkt von der Studie zurückziehen wollen,
       schreiben Sie uns,
-      unter Angabe des Geburtsdatums und der Postleitzahl, an die unten genannte E-Mail-Adresse.
+      unter Angabe des Codes aus der Einladungsemail, an die unten genannte E-Mail-Adresse.
     </p>
 
     <p class="block-text" align="center">
-      Bevor es los geht, brauchen wir noch noch ein paar Informationen über Sie und ihr Kind. Das hilft uns die Ergebnisse richtig zu interpretieren. Das ist zum einen der Geburtstag ihres Kindes, woraus wir das Alter berechnen, und zum anderen Ihre Postleitzahl, um Ihre Daten von anderen unterscheiden zu können.
-    </p>
-
-    <p class="block-text" align="center">
-      Sobald Sie die Felder ausgefüllt haben, klicken Sie danach einfach auf den grauen Knopf "Los geht's". Vielen Dank und viel
+      Bevor es los geht, brauchen wir noch den Code, den wir Ihnen per E-Mail zugeschickt haben. Um
+      weiter zu gehen,
+      klicken Sie danach einfach auf den grauen Knopf "Los geht's". Vielen Dank und viel
       Spa&szlig;!
     </p>
 
@@ -151,7 +149,7 @@
             > -->
 
           <p style="text-align: center;">
-            <button type="button" onclick="startWebcamStream(), toggleModal()" style="border-radius: 15px;">
+            <button type="button" onclick="startStream(), modalContent('#video-preview')" style="border-radius: 15px;">
               Webcam-Vorschau
             </button>
           </p>
@@ -161,7 +159,7 @@
     </div>
 
     <div align="center">
-      <button type="button" onclick="startWebcamRecorder(), showSlide('intro')">Weiter</button>
+      <button type="button" onclick="startRecorder(), showSlide('intro')">Weiter</button>
     </div>
   </div>
 
@@ -834,9 +832,9 @@
     <div style="width: 100%; margin: 0 auto; text-align: center; ">
 
       <img src="images/intro.png"
-        style="position:absolute;top: 220px;left: 50%; margin-left: -150 ;WIDTH: 300px;z-index:1;">
+        style="position:absolute;top: 220px;left: 50%; margin-left: -150 ;WIDTH: 300px;">
 
-  <img src="images/ccp_logo.png" style="position:absolute;top: 70%;left: 20%; WIDTH: 40%;z-index:-1;" >
+  <img src="images/ccp_logo.png" style="position:absolute;top: 500px;left: 20%; WIDTH: 60%;z-index:-1;" >
     </div>
 
     <center>
