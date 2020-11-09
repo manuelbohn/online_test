@@ -205,12 +205,12 @@ turk = turk || {};
 	// htmlify(rawData)
 
 
-      $.post("https://ccp-odc.eva.mpg.de/manuel_bohn/online_test/data/online_test.php",{expHTML: JSON.stringify(rawData)}, "json");
+      $.post("data/online_test.php",{expHTML: JSON.stringify(rawData)}, "json");
 
       return;
     }
 
-      $.post("https://ccp-odc.eva.mpg.de/manuel_bohn/online_test/data/online_test.php",{expHTML: JSON.stringify(rawData)}, "json");
+      $.post("data/online_test.php",{expHTML: JSON.stringify(rawData)}, "json");
 //    $.post("https://ccp-odc.eva.mpg.de/studie/data/pragBat.php",{expHTML: JSON.stringify(rawData)}, "json");
     // // Otherwise, submit the form
     // form.action = "https://langcog.stanford.edu/cgi-bin/SC_noisy/parenting_proj.php";
