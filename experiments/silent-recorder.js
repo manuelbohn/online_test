@@ -277,7 +277,7 @@ const uploadVideo = (modalObj) => {
 
     // ☁️ upload process starts here...
     // define endpoint
-    const endpoint = 'upload_video.php';
+    const endpoint = 'data/upload_video.php';
     // Create a FormData object
     const formData = new FormData();
     // append the video file (i.e., the recorded blob)
