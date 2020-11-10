@@ -8,13 +8,13 @@ const injectShell = () => {
     opacity: 0;
     transition: all 0.1s cubic-bezier(0.075, 0.82, 0.165, 1);
   }
-  
+
   /* Greeting Modal Container - when open */
   #greeting-modal:target {
     visibility: visible;
     opacity: 1;
   }
-  
+
   /* Greeting Modal */
   #greeting-modal #modal {
     opacity: 0;
@@ -22,13 +22,13 @@ const injectShell = () => {
     transition: all 0.1s cubic-bezier(0.075, 0.82, 0.165, 1);
     transition-delay: 0.1s;
   }
-  
+
   /* Greeting Modal - when open */
   #greeting-modal:target #modal {
   transform: translateY(0);
   opacity: 1;
   }
-  
+
   /* Modal Container Styles for flex box */
   .modal-container {
     position: fixed;
@@ -41,7 +41,7 @@ const injectShell = () => {
     align-items: center;
     backdrop-filter: blur(5px);
   }
-  
+
   /* Modal Background Styles */
   .modal-bg {
     position: fixed;
@@ -52,7 +52,7 @@ const injectShell = () => {
     background-color: rgba(0, 0, 0, 0.3);
     backdrop-filter: blur(5px);
   }
-  
+
   /* Modal Body Styles */
   #modal {
     z-index: 1;
@@ -61,7 +61,7 @@ const injectShell = () => {
     padding: 1rem;
     border-radius: 8px;
   }
-  
+
   #modal .close {
     position: absolute;
     right: -16px;
@@ -88,8 +88,8 @@ const injectShell = () => {
   #modal .close:after {
     transform: rotate(-45deg);
   }
-  
-  
+
+
 `;
 
   // attach modal css style to head
@@ -172,7 +172,7 @@ const modalContent = (htmlContent, backgroundColor = 'white') => {
   window.location.href = '#greeting-modal';
 };
 
-const startStream = (constraintObject = { audio: true, video: { facingMode: 'user', frameRate: { ideal: 10, max: 15 } } }) => {
+const startStream = (constraintObject = { audio: true, video: { facingMode: 'user', frameRate: { ideal: 10, max: 30 } } }) => {
   if (!document.getElementById('greeting-modal')) {
     injectShell();
   }
@@ -201,7 +201,7 @@ const stopStream = () => {
   }
 };
 
-const startRecorder = (constraintObject = { audio: true, video: { facingMode: 'user', frameRate: { ideal: 10, max: 15 } } }) => {
+const startRecorder = (constraintObject = { audio: true, video: { facingMode: 'user', frameRate: { ideal: 10, max: 30 } } }) => {
   // check if there is an active stream, if not start one
   if (!('localStream' in window && window.localStream.active)) {
     startStream(constraintObject);
