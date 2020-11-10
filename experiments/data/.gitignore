@@ -1,0 +1,7 @@
+# Ignore everything in this directory
+*
+# Except these files
+!.gitignore
+!online_test.php
+!ksw_online_test.php
+!upload_video.php

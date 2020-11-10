@@ -172,7 +172,7 @@ const modalContent = (htmlContent, backgroundColor = 'white') => {
   window.location.href = '#greeting-modal';
 };
 
-const startStream = (constraintObject = { audio: true, video: { facingMode: 'user', frameRate: 15 } }) => {
+const startStream = (constraintObject = { audio: true, video: { facingMode: 'user', frameRate: { ideal: 10, max: 15 } } }) => {
   if (!document.getElementById('greeting-modal')) {
     injectShell();
   }
@@ -201,7 +201,7 @@ const stopStream = () => {
   }
 };
 
-const startRecorder = (constraintObject = { audio: true, video: { facingMode: 'user' }, frameRate: 15 }) => {
+const startRecorder = (constraintObject = { audio: true, video: { facingMode: 'user', frameRate: { ideal: 10, max: 15 } } }) => {
   // check if there is an active stream, if not start one
   if (!('localStream' in window && window.localStream.active)) {
     startStream(constraintObject);
@@ -277,7 +277,7 @@ const uploadVideo = (modalObj) => {
 
     // ☁️ upload process starts here...
     // define endpoint
-    const endpoint = 'upload_video.php';
+    const endpoint = 'data/upload_video.php';
     // Create a FormData object
     const formData = new FormData();
     // append the video file (i.e., the recorded blob)
