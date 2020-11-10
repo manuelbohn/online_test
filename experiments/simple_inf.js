@@ -32,7 +32,7 @@ var simple_inf = {
       setTimeout(() => {
         uploadVideo(
           {
-            fname: new Date().toISOString().replaceAll(':', '-').replace('.', '-') + "-" + train.subid,
+            fname: train.subid,
             uploadContent: `<img src='images/spinner-upload.svg' width='800px';>`,
             uploadColor: `#E1B4B4`,
             successContent: `<img src='images/spinner-done.svg' width='800px';>`,
@@ -40,10 +40,10 @@ var simple_inf = {
           }
         );
       }, 1000);
-      
 
 
-      
+
+
       $(".table_l").show();
       $(".table_r").show();
       setTimeout(function() { turk.submit(simple_inf) }, 500);
